@@ -5,7 +5,7 @@ describe("Gilded Rose", function() {
     update_quality();
     expect(items[0].name).toEqual("fixme");
   }); */
-
+  //testing legacy code
   it("normal item decreases quality and sellIn by 1", () =>
   {
     const item = new Item("+5 Dexterity Vest", 10, 20);
@@ -110,6 +110,17 @@ describe("Gilded Rose", function() {
     update_quality();
 
     expect(item.quality).toBe(0);
+  });
+
+  //new feature conjuref items
+  it("Conjured items degrade in quality twice as fast as normal items", () => {
+    const item = new Item("Conjured Mana Cake", 3, 6);  
+
+    items = [item];
+    update_quality();
+
+    expect(item.sell_in).toBe(2);
+    expect(item.quality).toBe(4);
   });
 
 });
