@@ -5,6 +5,7 @@ describe("Gilded Rose", function() {
     update_quality();
     expect(items[0].name).toEqual("fixme");
   }); */
+  //ai support let ai double check tests and suggest missing tests
   //testing legacy code
   it("normal item decreases quality and sellIn by 1", () =>
   {
@@ -93,7 +94,7 @@ describe("Gilded Rose", function() {
 
     expect(item.quality).toBe(23);
   });
-
+ // this was ai suggested test
   it("Backstage passes quality never exceeds 50", () => {
     const item = new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49);
 
@@ -112,7 +113,7 @@ describe("Gilded Rose", function() {
     expect(item.quality).toBe(0);
   });
 
-  //new feature conjuref items
+  //new feature conjured items
   it("Conjured items degrade in quality twice as fast as normal items", () => {
     const item = new Item("Conjured Mana Cake", 3, 6);  
 
@@ -122,5 +123,7 @@ describe("Gilded Rose", function() {
     expect(item.sell_in).toBe(2);
     expect(item.quality).toBe(4);
   });
+
+
 
 });
