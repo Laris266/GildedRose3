@@ -47,4 +47,13 @@ describe("Gilded Rose", function() {
     expect(item.quality).toBe(80);
   });
 
+  it("quality is never negative", () => {
+    const item = new Item("+5 Dexterity Vest", 10, 0);
+
+    items = [item];
+    update_quality();
+
+    expect(item.quality).toBe(0);
+  });
+
 });
